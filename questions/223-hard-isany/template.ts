@@ -1,1 +1,1 @@
-export type IsAny<T> = any
+export type IsAny<T> = ((aux: [any]) => [any]) extends ((aux: T) => T) ? true : false;

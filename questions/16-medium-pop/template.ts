@@ -1,1 +1,1 @@
-export type Pop<T extends any[]> = any
+export type Pop<T extends any[]> = T extends [...infer K, infer L]? K: never;
