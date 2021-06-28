@@ -1,1 +1,1 @@
-export type StringToUnion<T extends string> = any
+export type StringToUnion<S extends string, U=never> = S extends `${infer L}${infer R}`? StringToUnion<R,L|U>: U;

@@ -1,1 +1,1 @@
-export type Flatten = any
+export type Flatten <A extends any[]> = A extends [...infer L,infer R]? R extends any[]? [...Flatten<L>,...Flatten<R>]: A:[];

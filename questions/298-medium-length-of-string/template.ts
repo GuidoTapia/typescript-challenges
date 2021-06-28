@@ -1,1 +1,1 @@
-export type LengthOfString<S extends string> = any
+export type LengthOfString<S extends string,A extends any[]=[]> = S extends `${infer L}${infer R}`? LengthOfString<R,[L, ...A]>: A['length'];
